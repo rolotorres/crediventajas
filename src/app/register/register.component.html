@@ -21,35 +21,40 @@
             <div class="w3_info">
                 <h2>Create An Account</h2>
                 <p>Vestibulum est nulla, fermentum eget euismod et, tincidunt at dui dolor sit.</p>
-                <form action="#" method="post">
+                <form ngNativeValidate [formGroup]="forma" (ngSubmit)="newUser()" action="#" method="post">
                     <div class="input-group">
                         <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                        <input type="text" placeholder="First Name" required="">
+                        <input formControlName="username" name="username" type="text" placeholder="Nombre" required="">
                     </div>
                     <div class="input-group">
                         <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                        <input type="text" placeholder="Last Name" required="">
+                        <input formControlName="userlastname" name="userlastname" type="text" placeholder="Apellido" required="">
                     </div>
                     <div class="input-group">
                         <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        <input type="email" placeholder="Email" required="">
+                        <input formControlName="usermail" name="usermail" type="email" placeholder="Email" required="">
                     </div>
                     <div class="input-group">
                         <span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                        <input type="Password" placeholder="Password" required="">
+                        <input formControlName="pasword" name="pasword" type="Password" placeholder="Password" required="">
                     </div>
                     <div class="input-group">
                         <span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                        <input type="Password" placeholder="Confirm Password" required="">
+                        <input formControlName="pasword2" name="pasword2" type="Password" placeholder="Confirm Password" required="">
                     </div>
-                    <input type="checkbox" value="remember-me" />
-                    <h4>Send me latest updates </h4>
+
+                    <div class="form-group" *ngIf="forma.errors?.sonIguales && !forma.pristine">
+                        <p class="text-danger">
+                            Las contraseñas deben ser iguales
+                        </p>
+                    </div>
+
+                    <input formControlName="condiciones" name="condiciones" type="checkbox" value="remember-me" />
+                    <h4> Acepto las bases y condiciones</h4>
                     <button class="btn btn-danger btn-block" type="submit">Create Account</button >                
               </form>
           </div>
           <div class="clear"></div>
           </div>
-          
         </div>
-        
       </div>
