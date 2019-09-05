@@ -21,7 +21,7 @@
             <div class="w3_info">
                 <h2>Create An Account</h2>
                 <p>Vestibulum est nulla, fermentum eget euismod et, tincidunt at dui dolor sit.</p>
-                <form ngNativeValidate [formGroup]="forma" (ngSubmit)="newUser()" action="#" method="post">
+                <form ngNativeValidate [formGroup]="forma" (ngSubmit)="newUser()" method="post">
                     <div class="input-group">
                         <span><i class="fa fa-user" aria-hidden="true"></i></span>
                         <input formControlName="username" name="username" type="text" placeholder="Nombre" required="">
@@ -51,7 +51,9 @@
 
                     <input formControlName="condiciones" name="condiciones" type="checkbox" value="remember-me" />
                     <h4> Acepto las bases y condiciones</h4>
-                    <button class="btn btn-danger btn-block" type="submit">Create Account</button >                
+                    <p class="account">By clicking login, you agree to our <a href="#">Terms & Conditions!</a></p>
+
+                    <button class="btn btn-danger btn-block" type="submit">Create Account</button >
               </form>
           </div>
           <div class="clear"></div>

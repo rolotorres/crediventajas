@@ -10,24 +10,23 @@
     <div class="w3_info">
         <h2>Login to your Account</h2>
         <p>Enter your details to login.</p>
-        <form action="#" method="post">
-            <label>Email Address</label>
+        <form ngNativeValidate #f='ngForm' (ngSubmit)="ingresar(f)" method="post">
+            <label>Correo Electrónico</label>
             <div class="input-group">
                 <span class="fa fa-envelope" aria-hidden="true"></span>
-                <input type="email" placeholder="Enter Your Email" required="">
+                <input ngModel name="usermail" class="form-control" type="email" placeholder="Ingrese su email" required="">
             </div>
-            <label>Password</label>
+            <label>Contraseña</label>
             <div class="input-group">
                 <span class="fa fa-lock" aria-hidden="true"></span>
-                <input type="Password" placeholder="Enter Password" required="">
+                <input ngModel name="pasword" class="form-control" type="Password" placeholder="Ingrese su clave" required="">
             </div>
             <div class="login-check">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Remember me</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Recuerdame</label>
             </div>
             <button class="btn btn-danger btn-block" type="submit">Login</button >                
       </form>
-      <p class="account">By clicking login, you agree to our <a href="#">Terms & Conditions!</a></p>
-      <p class="account1">Dont have an account? <a href="#">Register here</a></p>
+      <p class="account1">Aún no tienes cuenta? <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Ingresa aquí</a></p>
     </div>
   </div>
   <!-- //main content -->
